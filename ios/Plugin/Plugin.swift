@@ -198,9 +198,9 @@ public class BarcodeScanner: CAPPlugin, AVCaptureMetadataOutputObjectsDelegate {
     @available(swift, deprecated: 5.6, message: "New Xcode? Check if `AVCaptureDevice.DeviceType` has new types and add them accordingly.")
     private func discoverCaptureDevices() -> [AVCaptureDevice] {
         if #available(iOS 13.0, *) {
-            return AVCaptureDevice.DiscoverySession(deviceTypes: [ .builtInWideAngleCamera ], mediaType: .video, position: .unspecified).devices
+            return AVCaptureDevice.DiscoverySession(deviceTypes: [ .builtInWideAngleCamera,  .builtInTelephotoCamera, .builtInUltraWideCamera, .builtInDualCamera,  .builtInDualWideCamera, .builtInTripleCamera, .builtInTrueDepthCamera ], mediaType: .video, position: .unspecified).devices
         } else {
-            return AVCaptureDevice.DiscoverySession(deviceTypes: [ .builtInWideAngleCamera ], mediaType: .video, position: .unspecified).devices
+            return AVCaptureDevice.DiscoverySession(deviceTypes: [ .builtInWideAngleCamera, .builtInTelephotoCamera, .builtInDualCamera,  .builtInTrueDepthCamera], mediaType: .video, position: .unspecified).devices
         }
     }
 
