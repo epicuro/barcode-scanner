@@ -150,13 +150,9 @@ public class BarcodeScanner: CAPPlugin, AVCaptureMetadataOutputObjectsDelegate {
             self.webView!.superview!.insertSubview(cameraView, belowSubview: self.webView!)
             
             let availableVideoDevices =  discoverCaptureDevices()
-            print("neocles availableVideoDevices")
-            print(availableVideoDevices)
             for device in availableVideoDevices {
                 if device.position == AVCaptureDevice.Position.back {
                     backCamera = device
-                    print("neocles device")
-                    print(device)
                 }
                 else if device.position == AVCaptureDevice.Position.front {
                     frontCamera = device
@@ -198,9 +194,9 @@ public class BarcodeScanner: CAPPlugin, AVCaptureMetadataOutputObjectsDelegate {
     @available(swift, deprecated: 5.6, message: "New Xcode? Check if `AVCaptureDevice.DeviceType` has new types and add them accordingly.")
     private func discoverCaptureDevices() -> [AVCaptureDevice] {
         if #available(iOS 13.0, *) {
-            return AVCaptureDevice.DiscoverySession(deviceTypes: [ .builtInWideAngleCamera,  .builtInTelephotoCamera, .builtInUltraWideCamera, .builtInDualCamera,  .builtInDualWideCamera, .builtInTripleCamera, .builtInTrueDepthCamera ], mediaType: .video, position: .unspecified).devices
+            return AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTripleCamera, .builtInDualCamera, .builtInTelephotoCamera, .builtInTrueDepthCamera, .builtInUltraWideCamera, .builtInDualWideCamera, .builtInWideAngleCamera], mediaType: .video, position: .unspecified).devices
         } else {
-            return AVCaptureDevice.DiscoverySession(deviceTypes: [ .builtInWideAngleCamera, .builtInTelephotoCamera, .builtInDualCamera,  .builtInTrueDepthCamera], mediaType: .video, position: .unspecified).devices
+            return AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera, .builtInTelephotoCamera, .builtInTrueDepthCamera], mediaType: .video, position: .unspecified).devices
         }
     }
 
