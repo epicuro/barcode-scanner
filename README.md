@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2022?style=flat-square" />
+  <img src="https://img.shields.io/maintenance/yes/2023?style=flat-square" />
   <a href="https://www.npmjs.com/package/@capacitor-community/barcode-scanner"><img src="https://img.shields.io/npm/l/@capacitor-community/barcode-scanner?style=flat-square" /></a>
 <br>
   <a href="https://www.npmjs.com/package/@capacitor-community/barcode-scanner"><img src="https://img.shields.io/npm/dw/@capacitor-community/barcode-scanner?style=flat-square" /></a>
@@ -39,7 +39,13 @@ On **iOS** this library makes use of Apple's own `AVFoundation`. This means **[t
 
 On **Android** this library uses [`zxing-android-embedded`](https://github.com/journeyapps/zxing-android-embedded) which uses [`zxing`](https://github.com/zxing/zxing) under the hood. That means **[this list of barcodes](https://github.com/zxing/zxing/#supported-formats)** is supported.
 
+On **Web** this library uses [`zxing/browser`](https://github.com/zxing-js/browser). That means **[this list of barcodes](https://github.com/zxing/zxing/#supported-formats)** is supported. The web implementation is currently in development, there might be issues and not all features are currently supported!
+
 ### Note on supported Capacitor versions
+
+`v5.x.x-beta.x` pre-release based on ML-Kit that supports Capacitor `v5.x`
+
+`v4.x` supports Capacitor `v5.x`
 
 `v3.x` supports Capacitor `v4.x`
 
@@ -111,7 +117,7 @@ Within your `AndroidManifest.xml` file, change the following:
 
 ## Usage
 
-The complete API reference can be found [here](./API_REFERENCE.md).
+The complete API reference can be found [here](./src/definitions.ts).
 
 Scanning a (QR) barcode can be as simple as:
 
