@@ -1,3 +1,11 @@
+# DEPRECATED
+
+This package is deprecated in favor of [`@capacitor-mlkit/barcode-scanning`](https://github.com/capawesome-team/capacitor-mlkit/tree/main/packages/barcode-scanning).
+`@capacitor-mlkit/barcode-scanning` has multiple features that are missing in this project, especially a prebuilt UI. 
+Not having an out of the box solution was confusing for most users and caused a lot of issues.
+Additionally, v5 of this plugin intended to switch to `ml-kit` and this brings additional problems if you want to use multiple parts of `ml-kit` in the same application, which is solved by `@capacitor-mlkit/barcode-scanning` as well.
+
+
 <p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
 <h3 align="center">Barcode Scanner</h3>
 <p align="center"><strong><code>@capacitor-community/barcode-scanner</code></strong></p>
@@ -6,7 +14,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/maintenance/yes/2022?style=flat-square" />
+  <img src="https://img.shields.io/maintenance/no/2023?style=flat-square" />
   <a href="https://www.npmjs.com/package/@capacitor-community/barcode-scanner"><img src="https://img.shields.io/npm/l/@capacitor-community/barcode-scanner?style=flat-square" /></a>
 <br>
   <a href="https://www.npmjs.com/package/@capacitor-community/barcode-scanner"><img src="https://img.shields.io/npm/dw/@capacitor-community/barcode-scanner?style=flat-square" /></a>
@@ -28,7 +36,7 @@
 
 | Maintainer | GitHub                                | Active |
 | ---------- | ------------------------------------- | ------ |
-| thegnuu    | [thegnuu](https://github.com/thegnuu) | yes    |
+| thegnuu    | [thegnuu](https://github.com/thegnuu) | no     |
 | tafelnl    | [tafelnl](https://github.com/tafelnl) | no     |
 
 ## About
@@ -39,7 +47,13 @@ On **iOS** this library makes use of Apple's own `AVFoundation`. This means **[t
 
 On **Android** this library uses [`zxing-android-embedded`](https://github.com/journeyapps/zxing-android-embedded) which uses [`zxing`](https://github.com/zxing/zxing) under the hood. That means **[this list of barcodes](https://github.com/zxing/zxing/#supported-formats)** is supported.
 
+On **Web** this library uses [`zxing/browser`](https://github.com/zxing-js/browser). That means **[this list of barcodes](https://github.com/zxing/zxing/#supported-formats)** is supported. The web implementation is currently in development, there might be issues and not all features are currently supported!
+
 ### Note on supported Capacitor versions
+
+`v5.x.x-beta.x` pre-release based on ML-Kit that supports Capacitor `v5.x`
+
+`v4.x` supports Capacitor `v5.x`
 
 `v3.x` supports Capacitor `v4.x`
 
@@ -111,7 +125,7 @@ Within your `AndroidManifest.xml` file, change the following:
 
 ## Usage
 
-The complete API reference can be found [here](./API_REFERENCE.md).
+The complete API reference can be found [here](./src/definitions.ts).
 
 Scanning a (QR) barcode can be as simple as:
 
